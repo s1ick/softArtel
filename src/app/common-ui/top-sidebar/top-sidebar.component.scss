@@ -1,0 +1,17 @@
+@import "colors.scss";
+.sidebar {
+    &__date {
+       color: $text-primary;
+       line-height: 28px;
+       @extend .inter-500;
+       font-size: 20px;
+       margin-bottom: 8px;
+    }
+    &__group-btn {
+        display: flex;
+        & .products {
+            margin-right: 12px;
+        }
+
+    }
+}

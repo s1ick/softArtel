@@ -1,0 +1,16 @@
+<!-- #docregion align-start -->
+<mat-tab-group id="tabs" mat-stretch-tabs="false" mat-align-tabs="start" class="tabs">
+  <!-- #enddocregion align-start -->
+  <mat-tab label="На согласование">
+    <app-agreed class="tabs__content"></app-agreed>
+  </mat-tab>
+  <mat-tab label="На ревью">
+    <app-rewiew class="tabs__content"></app-rewiew>
+  </mat-tab>
+  <mat-tab label="Для работы">
+    <app-forwork class="tabs__content"></app-forwork>
+  </mat-tab>
+  <mat-tab label="Черновики">
+    <app-draft class="tabs__content"></app-draft>
+  </mat-tab>
+</mat-tab-group>

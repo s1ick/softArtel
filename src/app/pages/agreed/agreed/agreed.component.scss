@@ -1,0 +1,6 @@
+@import "expansion-panel.scss";
+
+.scroll {
+    max-height: calc(100vh - 240px);
+    overflow: scroll;
+}

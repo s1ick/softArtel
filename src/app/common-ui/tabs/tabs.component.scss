@@ -1,0 +1,26 @@
+@import "colors.scss";
+
+#tabs.tabs {
+    --mdc-filled-text-field-label-text-color: #5E5E5E;
+    --mdc-filled-text-field-label-text-line-height: 18px;
+    --mat-tab-header-label-text-size:13px;
+    --mat-tab-header-label-text-font: "Inter", serif;
+     --mat-tab-header-label-text-weight: 400;
+     --mdc-secondary-navigation-tab-container-height: 36px;
+     --mdc-tab-indicator-active-indicator-color: #16A4E3;
+     --mat-sys-primary: #16A4E3;
+    --mat-tab-header-active-ripple-color: transparent;
+   --mat-tab-header-inactive-ripple-color:  transparent;
+    --mat-tab-header-active-label-text-color: #16A4E3;
+    --mat-tab-header-inactive-hover-label-text-color: #5E5E5E;
+    --mat-tab-header-active-hover-label-text-color: #16A4E3;
+  //--mat-tab-header-inactive-label-text-color:
+  //--mat-sys-on-surface: #16A4E3;
+  --mat-tab-header-inactive-hover-label-text-color: #5E5E5E;
+}
+.tabs {
+    &__content {
+        display: block;
+        padding-top: 16px;
+    }
+}

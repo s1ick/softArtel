@@ -1,0 +1,34 @@
+<div class="sidebar">
+    <div class="sidebar__date">
+        Вторник, 27 Октября
+    </div>
+    <div class="sidebar__group-btn">
+        <div class="sidebar-group-btn__filter products">
+            <mat-form-field>
+                <mat-label>Все продукты</mat-label>
+                <mat-select>
+                  @for (product of products; track product) {
+                    <mat-option [value]="product.value">
+                      <img [src]="imagePath + 'products/' + product.icon + '.svg'" [alt]="product.icon">
+                      {{product.viewValue}}
+                    </mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div class="sidebar-group-btn__filter category">
+            <mat-form-field>
+                <mat-label>Все задачи</mat-label>
+                <mat-select>
+                  @for (task of tasks; track task) {
+                    <mat-option [value]="task.value">
+                      <img [src]="imagePath + 'category/' + task.icon + '.svg'" [alt]="task.icon">
+                      {{task.viewValue}}
+                    </mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+// background
+$bg_grayDark: #f1f2f4; //Фон системы
+$bg_blocks: #f9fafc; //Блоки на фоне
+$bg_fields: #f5f6f8; //Текстовые поля (+ сообщения)
+$bg_menu: #fff; //выпадающие списки и меню
+$bg_light: #fff; //белые блоки / фон модалок
+$bg_blue: #effaff; //акцентные блоки
+$bg_border: rgba(black, 0.05); //обводка блоков, 1рх
+$divider: #e0e0e0; //Разделители
+
+//text
+$text-primary: #242424; //Названия, заголовки
+$text-text: #5e5e5e; //Основной текст
+$text-secondary: #7e7e7e; //Второстепенный текст
+$text-service: #b0b0b0; //Текст плейсходеров, пути
+$Link: #005bd1; //ссылки
+$Link-visited: #528fdf; //посещенные ссылки
+
+//special
+$active_blue: #16a4e3; //Активный цвет системы
+$green: #1bba69;
+$red: #ce0000;
+$orange: #ff9000;
+$white: #ffffff;
+
+//errors
+$bug-blocked: #ff0000; //Блокирующая ошибка
+$bug-critical: #a90c26; //Критическая ошибка
+$bug-major: #ed4e4e; //Значительная ошибка
+$bug-minor: #ff7002; //Незначительная ошибка
+$bug-trivial: #b0b0b0; //Тривиальная ошибка
+
+//shadows
+.new_shdw_card {
+	box-shadow: 0px 3px 10px 0px #263a5b0d;
+}
+.shdw_modal {
+	box-shadow:
+		0px -2px 6px 0px rgba(0, 7, 62, 0.05),
+		0px 16px 32px 0px rgba(0, 7, 62, 0.08);
+}
+.shdw_menu {
+	box-shadow:
+		0px 2px 6px 0px rgba(0, 7, 62, 0.05),
+		0px 12px 24px 0px rgba(0, 7, 62, 0.1);
+}
+
+.inter-400 {
+	font-family: "Inter", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+.inter-500 {
+	font-family: "Inter", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+}
+.roboto-500 {
+	font-family: "Roboto", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}

@@ -1,0 +1,23 @@
+.wrapper {
+    max-width: 1920px;
+    padding: 0 40px;
+    margin:  0 auto;
+}
+.layout {	
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: stretch;
+    &__ls {
+        width: 50%;
+        margin-right: 16px;
+  
+
+    }
+    &__rs {
+        width: 50%;
+ 
+    }   
+}
