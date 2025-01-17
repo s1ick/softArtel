@@ -1,4 +1,4 @@
-@import "colors.scss";
+@use "colors" as c;
 *,
 *::before,
 *::after {
@@ -133,7 +133,7 @@ table {
 
 body {
 	@extend .inter-400;
-	background: $bg_grayDark;
+	background: c.$bg_grayDark;
 }
 
 .button {
@@ -155,39 +155,39 @@ body {
 		margin-right: 6px !important;
 	}
 	&.red {
-		color: $red;
-		border: 1px solid rgba($red, 0.1);
-		background: rgba($red, .05);
+		color: c.$red;
+		border: 1px solid rgba(c.$red, 0.1);
+		background: rgba(c.$red, .05);
 		&:hover {
-			border: 1px solid rgba($red, .2);
-			background: rgba($red, .1);
+			border: 1px solid rgba(c.$red, .2);
+			background: rgba(c.$red, .1);
 		}
 	}
 	&.green {
-		color: $green;
-		border: 1px solid rgba($green, 0.1);
-		background: rgba($green, .05);
+		color: c.$green;
+		border: 1px solid rgba(c.$green, 0.1);
+		background: rgba(c.$green, .05);
 		&:hover {
-			border: 1px solid rgba($green, 0.2);
-			background: rgba($green, .1);
+			border: 1px solid rgba(c.$green, 0.2);
+			background: rgba(c.$green, .1);
 		}
 	}
 	&.blue {
-		color: $active_blue;
-		border: 1px solid rgba($active_blue, 0.1);
-		background: rgba($active_blue, .05);
+		color: c.$active_blue;
+		border: 1px solid rgba(c.$active_blue, 0.1);
+		background: rgba(c.$active_blue, .05);
 		&:hover {
-			border: 1px solid rgba($active_blue, 0.2);
-			background: rgba($active_blue, 0.1);
+			border: 1px solid rgba(c.$active_blue, 0.2);
+			background: rgba(c.$active_blue, 0.1);
 		}
 	}
 	&.grey {
-		color: $text-secondary;
-		border: 1px solid rgba($text-secondary, 0.1);
-		background: rgba($text-secondary, .05);
+		color: c.$text-secondary;
+		border: 1px solid rgba(c.$text-secondary, 0.1);
+		background: rgba(c.$text-secondary, .05);
 		&:hover {
-			border: 1px solid rgba($text-secondary, 0.2);
-			background: rgba($text-secondary, .1);
+			border: 1px solid rgba(c.$text-secondary, 0.2);
+			background: rgba(c.$text-secondary, .1);
 		}
 		}
 
@@ -203,3 +203,10 @@ body {
 .ng-scroll-content {
 	padding-right: 16px !important;
 }
+@media screen and (max-width: 375px) {
+
+	app-top-sidebar {
+		display: none;
+	}
+
+  }

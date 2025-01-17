@@ -1,3 +1,33 @@
+@use 'colors' as c;
 .scroll {
-    max-height: calc(100vh - 188px)
+    max-height: calc(100vh - 205px);
 }
+.in-work {
+    border-radius: 8px;
+    padding: 12px;
+    background: rgb(239, 250, 255);
+    &__title {
+    color: rgb(22, 164, 227);
+    @extend .inter-500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    }
+}
+.in-pause {
+    &__title {
+        @extend .inter-500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        color: #5E5E5E;
+        margin-top: 16px;
+    }
+}
+@media screen and (max-width: 375px) {
+
+    .scroll {
+        max-height: none;
+    }
+
+  }

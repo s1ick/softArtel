@@ -1,39 +1,45 @@
 import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-interface Products {
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+
+interface Product {
   value: string;
-  viewValue: string
-  icon: number;
+  viewValue: string;
+  icon: string;
 }
-interface Tasks {
+
+interface Task {
   value: string;
-  viewValue: string
-  icon: number;
+  viewValue: string;
+  icon: string;
 }
+
 @Component({
   selector: 'app-top-sidebar',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, CommonModule],
   templateUrl: './top-sidebar.component.html',
-  styleUrl: './top-sidebar.component.scss'
+  styleUrls: ['./top-sidebar.component.scss'], // Исправлено styleUrl -> styleUrls
 })
 export class TopSidebarComponent {
-
   imagePath = 'assets/images/icons/filters/';
 
-  products: Products[] = [
-    {value: 'Название №1', viewValue: 'Название №1' , icon: 1},
-    {value: 'Название №2', viewValue: 'Название №2', icon: 1},
-    {value: 'Название №3', viewValue: 'Название №3', icon: 2},
+  products: Product[] = [
+    { value: 'product1', viewValue: 'Название №1', icon: '1' },
+    { value: 'product2', viewValue: 'Название №2', icon: '1' },
+    { value: 'product3', viewValue: 'Название №3', icon: '2' },
   ];
 
-  tasks: Tasks[] = [
-    {value: 'Общие', viewValue: 'Общие' , icon: 1},
-    {value: 'Разработка', viewValue: 'Разработка', icon: 2},
-    {value: 'Тестирование', viewValue: 'Тестирование', icon: 3},
-    {value: 'Ошибки', viewValue: 'Ошибки', icon: 4},
+  tasks: Task[] = [
+    { value: 'general', viewValue: 'Общие', icon: '1' },
+    { value: 'development', viewValue: 'Разработка', icon: '2' },
+    { value: 'testing', viewValue: 'Тестирование', icon: '3' },
+    { value: 'bugs', viewValue: 'Ошибки', icon: '4' },
   ];
+
+  selectedProduct: string = '';
+  selectedTask: string = '';
 }

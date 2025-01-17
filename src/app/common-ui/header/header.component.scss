@@ -1,6 +1,6 @@
-@import "colors.scss";
+@use "colors.scss" as c;
 .header {
-    border-top: 4px solid $active-blue;
+    border-top: 4px solid c.$active-blue;
     height: 59px;
     display: flex;
     flex-direction: row;
@@ -29,7 +29,7 @@
         align-content: stretch;
         &:hover {
             svg path {
-                fill: $active_blue;
+                fill: c.$active_blue;
             }
         }
         svg {
@@ -44,7 +44,7 @@
             display: flex;
             font-size: 14px;
             line-height: 21px;
-            color: $text-secondary;
+            color: c.$text-secondary;
             text-decoration: none;
             @extend .inter-400;
             display: flex;
@@ -53,7 +53,7 @@
             justify-content: flex-start;
             align-items: center;
             &:hover {
-                color: $active-blue;
+                color: c.$active-blue;
             }
         }
     }
@@ -69,7 +69,7 @@
         top: 0;
         bottom: 0;
         right: 0;
-        background: $divider;
+        background: c.$divider;
     }
 }
 
@@ -89,7 +89,7 @@
         box-shadow:
             0px 5px 10px 0px rgba(51, 75, 85, 0.15),
             0px -1px 4px 0px rgba(50, 77, 89, 0.07);
-        background: $active-blue;
+        background: c.$active-blue;
         color: #fff;
         @extend .roboto-500;
         padding: 4px 6px 4px 6px;
@@ -110,7 +110,7 @@
         font-size: 13px;
         line-height: 18px;
         white-space: nowrap;
-        color: $text-text;
+        color: c.$text-text;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -166,7 +166,7 @@
         position: absolute;
         z-index: 1;
         padding: 2px 6px 2px 6px;
-        background-color: $red;
+        background-color: c.$red;
         border-radius: 16px;
         font-size: 11px;
         font-weight: 500;
@@ -177,5 +177,103 @@
         left: 11px;
         top: -6px;
         width: 26px;
+    }
+}
+.header-mobile {
+    display: none;
+}
+ 
+@media screen and (max-width: 375px) {
+    .header {
+        display: none;
+    }
+    app-top-sidebar {
+        display: none;
+    }
+    .header-mobile {
+        width: 280px;
+        height: 60px;
+        border-radius: 30px;
+        box-shadow:
+            0px 12px 24px 0px rgba(0, 7, 62, 0.1),
+            0px 2px 6px 0px rgba(0, 7, 62, 0.05);
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: stretch;
+        position: fixed;
+        bottom: 12px;
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 12px;
+    }
+    .header-mobile-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: stretch;
+        width: 100%;
+        &__item {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: stretch;
+            width: 80px;
+            cursor: pointer;
+            margin-right: 4px;
+            position: relative;
+            & .count-chat {
+                position: absolute;
+                border-radius: 16px;
+                padding: 0px 4px 0px 4px;
+                background: c.$red;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-family: "Inter", serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 11px;
+                line-height: 16px;
+                top: -6px;
+                right: 17px;
+            }
+            & .count-team {
+                position: absolute;
+                padding: 0px 4px 0px 4px;
+                border-radius: 16px;
+                color: #fff;
+                font-family: "Inter", serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 11px;
+                line-height: 16px;
+                letter-spacing: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                background: c.$active_blue;
+                top: -8px;
+                right: 22px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 }

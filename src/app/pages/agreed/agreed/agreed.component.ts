@@ -47,7 +47,7 @@ export class AgreedComponent implements AfterViewInit {
     this.isExpanded = !this.isExpanded;
     if (this.isExpanded) {
       const contentHeight = this.content.nativeElement.scrollHeight;
-      this.content.nativeElement.style.maxHeight = contentHeight + 'px';
+      this.content.nativeElement.style.maxHeight = contentHeight + '16px';
     } else {
       this.content.nativeElement.style.maxHeight = '0';
     }

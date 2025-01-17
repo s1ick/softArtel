@@ -1,13 +1,12 @@
 
-<ng-scrollbar class="expansion-panel scroll">
         <div class="expansion-panel__header" (click)="togglePanel()">
                 <img 
                 [ngClass]="{'rotate': isExpanded}" class="button__icon" [src]="pathImages + 'icons/' + 'chevron.down.svg' " [alt]="'chevron.down'">
-                Мои: 7
+                Мои: {{tasks.slice(0, 7).length}}
         </div>
         <div #content class="expansion-panel__content"
          [ngClass]="{'expanded': isExpanded}">
-                <app-task *ngFor="let task of tasks" [productIcon]="task.productIcon"
+                <app-task *ngFor="let task of tasks.slice(0, 7)" [productIcon]="task.productIcon"
                         [textProductIcon]="task.textProductIcon" [typeProductIcon]="task.typeProductIcon"
                         [version]="task.version" [questionText]="task.questionText" [typeIcon]="task.typeIcon"
                         [stateIcon]="getStateTemplate(task.stateIcon)" [classProgress1]="task.classProgress1"
@@ -15,5 +14,4 @@
                         [textTask]="task.textTask" [fio]="task.fio" [numberTask]="task.numberTask">
                 </app-task>
         </div>
-</ng-scrollbar>
 

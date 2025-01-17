@@ -1,4 +1,4 @@
-@import "colors.scss";
+@use "colors.scss" as c;
 
 :host {
     display: block;
@@ -96,7 +96,7 @@
     font-size: 14px;
     line-height: 21px;
     @extend .inter-400;
-    color: $text-service;
+    color: c.$text-service;
     &__icon,
     &__text {
         display: flex;
@@ -133,7 +133,7 @@
     &__number {
         font-size: 14px;
         line-height: 21px;
-        color: $text-secondary;
+        color: c.$text-secondary;
         text-transform: uppercase;
         @extend .inter-400;
         white-space: nowrap;
@@ -148,7 +148,7 @@
 
     & div {
         height: 2px;
-        background-color: $divider;
+        background-color: c.$divider;
         width: 100%;
         margin-right: 6px;
         border-radius: 20px;
@@ -158,13 +158,13 @@
         }
 
         &.green {
-            background-color: $green;
+            background-color: c.$green;
         }
         &.blue {
-            background-color: $active_blue;
+            background-color: c.$active_blue;
         }
         &.gray {
-            background-color: $text-secondary;
+            background-color: c.$text-secondary;
         }
     }
 }
@@ -179,7 +179,7 @@
     }
 
     &__text {
-        color: $text-service;
+        color: c.$text-service;
         font-size: 13px;
         line-height: 18px;
         @extend .inter-400;
@@ -194,7 +194,7 @@
     &__text {
         line-height: 21px;
         @extend .inter-500;
-        color: $text-primary;
+        color: c.$text-primary;
         margin-left: 8px;
         max-height: 63px;
         overflow: hidden;
@@ -215,7 +215,7 @@
 
     &__text {
         font-size: 13px;
-        color: $text-secondary;
+        color: c.$text-secondary;
         height: 16px;
         @extend .inter-400;
         line-height: 18px;

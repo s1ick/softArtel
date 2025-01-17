@@ -1,4 +1,4 @@
-@import "colors.scss";
+@use "colors.scss" as c;
 
 .expansion-panel {
     &__header {
@@ -7,7 +7,7 @@
         font-size: 16px;
         @extend .inter-500;
         cursor: pointer;
-        color: $text-text;
+        color: c.$text-text;
         svg {
             margin-right: 4px;
         }
@@ -16,7 +16,7 @@
         }
     }
     &__content {
-        background: $bg_blocks;
+        background: c.$bg_blocks;
         
         border: 1px solid rgba(black, 0.04);
         border-radius: 8px;

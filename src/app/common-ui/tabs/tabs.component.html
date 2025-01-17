@@ -2,7 +2,9 @@
 <mat-tab-group id="tabs" mat-stretch-tabs="false" mat-align-tabs="start" class="tabs">
   <!-- #enddocregion align-start -->
   <mat-tab label="На согласование">
-    <app-agreed class="tabs__content"></app-agreed>
+    <ng-scrollbar class="scroll">
+      <app-agreed class="tabs__content"></app-agreed>
+    </ng-scrollbar>
   </mat-tab>
   <mat-tab label="На ревью">
     <app-rewiew class="tabs__content"></app-rewiew>

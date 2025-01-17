@@ -21,3 +21,23 @@
  
     }   
 }
+@media screen and (max-width: 375px) {
+    .wrapper {
+        padding: 0 16px;
+        max-height: calc(100vh - 162px);
+        overflow: scroll;
+    }
+	.layout {
+		flex-wrap: wrap;
+		&__rs, &__ls {
+			width: 100%;
+			margin-right: 0;
+		}
+        &__rs {
+            order: -1;
+            padding-top: 16px;
+        }
+	}
+
+
+  }
