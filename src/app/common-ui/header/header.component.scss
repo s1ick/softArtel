@@ -1,10 +1,9 @@
 @use "colors.scss" as c;
 .header {
     border-top: 4px solid c.$active-blue;
-    height: 59px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: stretch;
@@ -13,13 +12,13 @@
 .list {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: stretch;
-    max-width: 803px;
-    height: 31px;
-    width: 46%;
+    max-width: 661px;
+    width: 100%;
+    padding-top: 12px;
     &__item {
         display: flex;
         flex-direction: row;
@@ -84,6 +83,7 @@
     justify-content: flex-end;
     align-items: center;
     align-content: stretch;
+    margin-top: 12px;
     &__clock {
         border-radius: 6px;
         box-shadow:
@@ -183,7 +183,7 @@
     display: none;
 }
  
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
     .header {
         display: none;
     }

@@ -1,6 +1,6 @@
 @use 'colors' as c;
 .scroll {
-    max-height: calc(100vh - 205px);
+    max-height: calc(100vh - 220px);
 }
 .in-work {
     border-radius: 8px;
@@ -24,7 +24,7 @@
         margin-top: 16px;
     }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
 
     .scroll {
         max-height: none;

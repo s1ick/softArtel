@@ -1,5 +1,29 @@
 @use "colors.scss" as c;
+::ng-deep {
+    div.mat-mdc-select-panel.custom-dropdown {
+      background-color: #fff;
+      border: 1px solid rgb(239, 239, 239);
+      margin-top: 8px;
 
+      .mat-mdc-option:focus.mdc-list-item, .mat-mdc-option.mat-mdc-option-active.mdc-list-item {
+        background-color: c.$bg_blocks;
+        
+      }
+
+  }
+  .mat-mdc-form-field.custom-select {
+    & .mat-mdc-notch-piece.mdc-notched-outline__notch , .mat-mdc-notch-piece.mdc-notched-outline__leading,  .mat-mdc-notch-piece,  .mat-mdc-notch-piece.mdc-notched-outline__trailing, .mat-mdc-notch-piece .mdc-notched-outline__trailing {
+      border: 0 !important;
+    }
+    .mat-mdc-option {
+      min-height: 18px;
+      margin-bottom: 9px;
+      margin-top: 0px;
+      padding: 9px 8px;
+    }
+  }
+
+}
 .sidebar {
   display: flex;
   flex-direction: column; 
@@ -8,6 +32,8 @@
   padding: 20px; 
   --mdc-outlined-text-field-outline-color: #fff;
   --mdc-outlined-text-field-hover-outline-color: #fff;
+  --mat-select-container-elevation-shadow: 0px 21px 26.3px 0px rgba(0, 0, 0, 0.1),0px -2px 4px 0px rgba(0, 0, 0, 0.05);
+  --mat-select-panel-background-color: #fff;
 }
 
 .sidebar__date {
@@ -29,6 +55,8 @@
   justify-content: center;
   margin-right: 12px;
   background-color: #fff;
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 4px;
 }
 
 .custom-select {
