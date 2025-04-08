@@ -1,0 +1,30 @@
+@use "colors" as *;
+.expansion-panel {
+    &__header {
+        margin-bottom:8px;
+        line-height: 24px;
+        font-size: 16px;
+        @extend .inter-500;
+        cursor: pointer;
+        color: $text-text;
+        svg {
+            margin-right: 4px;
+        }
+        & .rotate {
+            transform: rotate(180deg);
+        }
+    }
+    &__content {
+        background: $bg_blocks;
+        
+        border: 1px solid rgba(black, 0.04);
+        border-radius: 8px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;  /* Плавная анимация высоты */
+    }
+     &.expanded {
+        padding: 12px;
+    }
+}
+

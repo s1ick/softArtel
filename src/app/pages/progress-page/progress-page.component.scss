@@ -1,4 +1,5 @@
-@use 'colors' as c;
+@use "mixins" as *;
+@use "colors" as *;
 .scroll {
     max-height: calc(100vh - 220px);
 }

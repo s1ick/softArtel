@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { TaskService } from '../../task.service';
+import { TaskService } from '@services/task.service';
 import { CommonModule } from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { Task } from '../../../task.model';
-import { TaskComponent } from '../../common-ui/task/task/task.component';
+import { Task } from '@models/task.model';
+import { TaskComponent } from '@components/task/task.component';
 
 @Component({
   selector: 'app-progress-page',

@@ -1,0 +1,198 @@
+@use "mixins" as *;
+@use "colors" as *;
+.header {
+  border-top: 4px solid $active_blue;
+  @include flex-row-center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-top: 12px;
+}
+
+// ===== Left Side =====
+.list {
+  @include flex-row-center;
+  flex-wrap: wrap;
+  max-width: 661px;
+  width: 100%;
+  gap: 0 8px;
+
+  &__item {
+    @include flex-row-center;
+    
+    &:hover {
+      svg path {
+        fill: $active_blue;
+      }
+    }
+
+    a {
+      @include flex-row-center;
+      @extend .inter-400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $text-secondary;
+      text-decoration: none;
+
+      &:hover {
+        color: $active_blue;
+      }
+    }
+
+    svg {
+      margin-right: 8px;
+
+      &.chevron {
+        margin: 0 0 0 8px;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.divider {
+  position: relative;
+  width: 1px;
+  height: 24px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background: $divider;
+  }
+}
+
+.button {
+  width: 118px;
+  height: 31px;
+}
+
+// ===== Right Side =====
+.header-rs {
+  @include flex-row-center;
+  gap: 0 12px;
+
+  &__clock {
+    @include flex-row-center;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: $active_blue;
+    color: #fff;
+    @extend .roboto-500;
+    box-shadow: 0 5px 10px rgba(51, 75, 85, 0.15), 
+                0 -1px 4px rgba(50, 77, 89, 0.07);
+
+    svg {
+      margin-right: 2px;
+    }
+  }
+
+  &__notification {
+    @extend .inter-400;
+    @include flex-row-center;
+    font-size: 13px;
+    line-height: 18px;
+    color: $text-text;
+    white-space: nowrap;
+
+    span {
+      width: 334px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    svg {
+      margin-right: 2px;
+    }
+  }
+
+  &__comment {
+    position: relative;
+    @include flex-row-center;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid rgba(black, 0.04);
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(black, 0.07);
+  }
+
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.header-rs-comment__text {
+  @include counter-badge;
+  background-color: $red;
+  top: -6px;
+  left: 11px;
+  width: 26px;
+  padding: 2px 6px;
+}
+
+// ===== Mobile Version =====
+.header-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header, app-top-sidebar {
+    display: none;
+  }
+
+  .header-mobile {
+    @include flex-row-center;
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 60px;
+    padding: 0 12px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 12px 24px rgba(0, 7, 62, 0.1), 
+                0 2px 6px rgba(0, 7, 62, 0.05);
+    z-index: 10;
+  }
+
+  .header-mobile-list {
+    @include flex-row-center;
+    justify-content: space-between;
+    width: 100%;
+
+    &__item {
+      @include flex-row-center;
+      position: relative;
+      width: 80px;
+      cursor: pointer;
+
+      .count-chat {
+        @include counter-badge;
+        background: $red;
+        top: -6px;
+        right: 17px;
+      }
+
+      .count-team {
+        @include counter-badge;
+        background: $active_blue;
+        top: -8px;
+        right: 22px;
+      }
+    }
+  }
+} 

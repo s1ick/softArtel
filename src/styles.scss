@@ -210,3 +210,54 @@ body {
 	}
 
   }
+
+
+  .layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: stretch;
+    flex: 1;
+    position: relative;
+    padding-top: 20px;
+  
+    &__ls {
+      width: 50%;
+      margin-right: 16px;
+      position: relative;
+    }
+    
+    &__rs {
+      width: 50%;
+      position: relative;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .layout {
+      flex-wrap: wrap;
+      
+      &__rs,
+      &__ls {
+        width: 100%;
+        margin-right: 0;
+        position: static;
+      }
+      
+      &__rs {
+        order: -1;
+        padding-top: 16px;
+      }
+    }
+  }
+  .page-construction {
+	text-align: center;
+    padding: 30px;
+	img {
+		max-width: 500px;
+		width: 100%;
+	}
+  }

@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './common-ui/header/header.component';
-import { TabsComponent } from './common-ui/tabs/tabs.component';
-import { TopSidebarComponent } from './common-ui/top-sidebar/top-sidebar.component';
+import { RouterOutlet, RouterModule } from '@angular/router';
+import { HeaderComponent } from '@components/header/header.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
+import { smoothFadeAnimation } from './animations/route.animations';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet,
     HeaderComponent,
-    TabsComponent,
-    TopSidebarComponent,
+    RouterModule,
     NgScrollbarModule,
-    ProgressPageComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
+  animations: [smoothFadeAnimation]
 })
-export class AppComponent {}
+export class AppComponent {
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet?.activatedRouteData?.['animation'];
+  }
+}
