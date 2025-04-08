@@ -1,42 +1,34 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { TaskService } from '../../task.service';
-import { TaskComponent } from '../../common-ui/task/task/task.component';
 import { CommonModule } from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { Task } from '../../../task.model';
+import { TaskComponent } from '../../common-ui/task/task/task.component';
 
 @Component({
   selector: 'app-progress-page',
+  standalone: true,
   imports: [TaskComponent, CommonModule, NgScrollbarModule],
   templateUrl: './progress-page.component.html',
-  styleUrl: './progress-page.component.scss'
+  styleUrls: ['./progress-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressPageComponent {
-  @ViewChild(TaskComponent) taskComponent!: TaskComponent;
-  isExpanded = false;
-  pathImages = 'assets/images/';
+  protected readonly taskService = inject(TaskService);
+  protected readonly pathImages = 'assets/images/';
+  protected readonly TASK_INDEX_IN_PROGRESS = 2; 
 
-    constructor(private taskService: TaskService, private cdr: ChangeDetectorRef) {}
-      getStateTemplate(state: string): TemplateRef<any> {
-        return this.taskService.getStateTemplate(state);
-      }
-   
-      get tasks() {
-        return this.taskService.tasks;
-      }
+  get tasks(): Task[] {
+    return this.taskService.tasks;
+  }
 
-      ngAfterViewInit(): void {
-        if (this.taskComponent) {
-          this.taskService.setTemplates({
-            coordinationTemplate: this.taskComponent.coordinationTemplate,
-            executionTemplate: this.taskComponent.executionTemplate,
-            reviewTemplate: this.taskComponent.reviewTemplate,
-            deploymentTemplate: this.taskComponent.deploymentTemplate,
-            testTemplate: this.taskComponent.testTemplate,
-            doneTemplate: this.taskComponent.doneTemplate,
-          });
-    
-          this.cdr.detectChanges();
-        }
-      }
+  get inProgressTask(): Task | null {
+    return this.tasks.length > this.TASK_INDEX_IN_PROGRESS 
+      ? this.tasks[this.TASK_INDEX_IN_PROGRESS]
+      : null;
+  }
 
+  getStateTemplate(state: string) {
+    return this.taskService.getStateTemplate(state);
+  }
 }

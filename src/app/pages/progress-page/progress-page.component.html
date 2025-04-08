@@ -1,43 +1,20 @@
 <ng-scrollbar class="scroll">
-<div class="in-work">
-    <div class="in-work__title">
-        В работе:
-    </div>
-<app-task 
-  [productIcon]="tasks[2].productIcon" 
-  [textProductIcon]="tasks[2].textProductIcon"
-  [typeProductIcon]="tasks[2].typeProductIcon" 
-  [version]="tasks[2].version" 
-  [questionText]="tasks[2].questionText"
-  [typeIcon]="tasks[2].typeIcon" 
-  [stateIcon]="getStateTemplate(tasks[2].stateIcon)"
-  [classProgress1]="tasks[2].classProgress1" 
-  [classProgress2]="tasks[2].classProgress2"
-  [classProgress3]="tasks[2].classProgress3" 
-  [textTask]="tasks[2].textTask" 
-  [fio]="tasks[2].fio"
-  [numberTask]="tasks[2].numberTask">
-</app-task>
+  <div class="in-work">
+    <div class="in-work__title">В работе:</div>
+    @if (inProgressTask; as task) {
+    <app-task [taskData]="task"></app-task>
+    } @else {
+    <div class="no-task-message">Нет задач в работе</div>
+    }
+  </div>
 
-</div>
-<div class="in-pause">
-    <div class="in-pause__title">
-        На паузе: {{tasks.length}}
-</div>
-<app-task *ngFor="let task of tasks" 
-          [productIcon]="task.productIcon"
-          [textProductIcon]="task.textProductIcon" 
-          [typeProductIcon]="task.typeProductIcon"
-          [version]="task.version" 
-          [questionText]="task.questionText" 
-          [typeIcon]="task.typeIcon"
-          [stateIcon]="getStateTemplate(task.stateIcon)" 
-          [classProgress1]="task.classProgress1"
-          [classProgress2]="task.classProgress2" 
-          [classProgress3]="task.classProgress3"
-          [textTask]="task.textTask" 
-          [fio]="task.fio" 
-          [numberTask]="task.numberTask">
-</app-task>
-</div>
+  <div class="in-pause">
+    <div class="in-pause__title">На паузе: {{ tasks.length }}</div>
+
+    @for (task of tasks; track task.id) {
+    <app-task [taskData]="task"></app-task>
+    } @empty {
+    <div class="no-task-message">Нет задач на паузе</div>
+    }
+  </div>
 </ng-scrollbar>

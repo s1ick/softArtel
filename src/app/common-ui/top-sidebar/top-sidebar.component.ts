@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 interface Product {
   value: string;
@@ -20,13 +20,21 @@ interface Task {
 @Component({
   selector: 'app-top-sidebar',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, CommonModule],
+  imports: [
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    CommonModule,
+  ],
   templateUrl: './top-sidebar.component.html',
-  styleUrls: ['./top-sidebar.component.scss'], // Исправлено styleUrl -> styleUrls
+  styleUrls: ['./top-sidebar.component.scss'],
+  providers: [DatePipe],
 })
 export class TopSidebarComponent {
+  constructor(public datePipe: DatePipe) {}
   imagePath = 'assets/images/icons/filters/';
-
+  today: Date = new Date();
   products: Product[] = [
     { value: 'product1', viewValue: 'Название №1', icon: '1' },
     { value: 'product2', viewValue: 'Название №2', icon: '1' },

@@ -1,17 +1,23 @@
+<div class="expansion-panel">
+  <div class="expansion-panel__header" (click)="togglePanel()">
+    <img
+      [class.rotate]="isExpanded"
+      class="button__icon"
+      [src]="pathImages + 'icons/chevron.down.svg'"
+      alt="chevron.down"
+    />
+    Мои: {{ visibleTasks.length }}
+  </div>
 
-        <div class="expansion-panel__header" (click)="togglePanel()">
-                <img 
-                [ngClass]="{'rotate': isExpanded}" class="button__icon" [src]="pathImages + 'icons/' + 'chevron.down.svg' " [alt]="'chevron.down'">
-                Мои: {{tasks.slice(0, 7).length}}
-        </div>
-        <div #content class="expansion-panel__content"
-         [ngClass]="{'expanded': isExpanded}">
-                <app-task *ngFor="let task of tasks.slice(0, 7)" [productIcon]="task.productIcon"
-                        [textProductIcon]="task.textProductIcon" [typeProductIcon]="task.typeProductIcon"
-                        [version]="task.version" [questionText]="task.questionText" [typeIcon]="task.typeIcon"
-                        [stateIcon]="getStateTemplate(task.stateIcon)" [classProgress1]="task.classProgress1"
-                        [classProgress2]="task.classProgress2" [classProgress3]="task.classProgress3"
-                        [textTask]="task.textTask" [fio]="task.fio" [numberTask]="task.numberTask">
-                </app-task>
-        </div>
-
+  <div
+    #content
+    [ngClass]="{ expanded: isExpanded }"
+    class="expansion-panel__content"
+  >
+    @for (task of visibleTasks; track task.id) {
+    <app-task [taskData]="task"></app-task>
+    } @empty {
+    <div class="no-tasks-message">Нет задач для отображения</div>
+    }
+  </div>
+</div>

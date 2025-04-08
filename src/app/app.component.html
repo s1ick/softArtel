@@ -1,17 +1,13 @@
 <div class="wrapper">
-    <app-header></app-header>
-    <app-top-sidebar></app-top-sidebar>
-    <div class="layout">
-
-        <!-- content goes here -->
-
-        <div class="layout__ls">
-            <app-tabs></app-tabs>
-        </div>
-        <div class="layout__rs">
-            <app-progress-page>
-
-            </app-progress-page>
-        </div>
+  <app-header></app-header>
+  <app-top-sidebar></app-top-sidebar>
+  <div class="layout">
+    <div class="layout__ls">
+      <app-tabs></app-tabs>
     </div>
-    <router-outlet />
+    <div class="layout__rs">
+      <app-progress-page> </app-progress-page>
+    </div>
+  </div>
+  <router-outlet />
+</div>

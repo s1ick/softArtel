@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './typeworkicons.component.html',
-  styleUrl: './typeworkicons.component.scss'
+  styleUrl: './typeworkicons.component.scss',
 })
-export class TypeworkiconsComponent {
-
-}
+export class TypeworkiconsComponent {}

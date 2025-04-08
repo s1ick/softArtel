@@ -1,59 +1,69 @@
+```markdown
 # SoftArtel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+[![Angular](https://img.shields.io/badge/Angular-v17+-DD0031.svg?logo=angular)](https://angular.io/)
+[![RxJS](https://img.shields.io/badge/RxJS-v7+-B7178C.svg?logo=reactivex)](https://rxjs.dev/)
 
-## Development server
+## 🚀 Особенности
 
-To start a local development server, run:
+- Современный стек технологий (Angular 17+, RxJS, Signals)
+- Адаптивный и интуитивно понятный интерфейс
+- Высокая производительность благодаря OnPush change detection
+- Гибкая система управления состоянием
+- Поддержка различных устройств и браузеров
 
-```bash
-ng serve
-```
+## 🛠 Технологический стек
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Основные технологии
+- **Angular** - фреймворк для построения пользовательского интерфейса
+- **TypeScript** - основной язык разработки
+- **RxJS** - для реактивного программирования и работы с асинхронными операциями
+- **SCSS** - для стилизации компонентов
 
-## Code scaffolding
+### Дополнительные библиотеки
+- **NgScrollbar** - кастомные скроллбары
+- **DatePipe** - форматирование дат и времени
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🏗️ Установка и запуск
 
-```bash
-ng generate component component-name
-```
+1. **Клонирование репозитория**
+   ```bash
+   git clone https://github.com/softArtel.git
+   cd ваш-проект
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. **Установка зависимостей**
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+3. **Запуск development сервера**
+   ```bash
+   npm start
+   ```
+   Приложение будет доступно по адресу: `http://localhost:4200/`
 
-## Building
+4. **Сборка для production**
+   ```bash
+   npm run build
+   ```
 
-To build the project run:
+## 🧩 Основные компоненты
 
-```bash
-ng build
-```
+### HeaderComponent
+Отображает текущее время с автообновлением каждую секунду. Реализован с использованием:
+- Angular Signals
+- RxJS interval
+- DatePipe для форматирования времени
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### TaskComponent
+Компонент для отображения задач с:
+- Динамической подгрузкой данных
+- Различными состояниями задач
+- Адаптивным интерфейсом
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### ProgressPageComponent
+Страница для отображения прогресса по задачам:
+- Разделение задач на "В работе" и "На паузе"
+- Использование NgScrollbar для удобной навигации
+- Оптимизированная производительность

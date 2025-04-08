@@ -1,11 +1,14 @@
 <div class="sidebar">
   <div class="sidebar__date">
-    Вторник, 27 Октября
+    {{ today | date : "EEEE, d MMMM" | titlecase }}
   </div>
   <div class="sidebar__group-btn">
-    <!-- Продукты -->
     <div class="sidebar-group-btn__filter products">
-      <mat-form-field appearance="outline" class="custom-select" floatLabel="auto">
+      <mat-form-field
+        appearance="outline"
+        class="custom-select"
+        floatLabel="auto"
+      >
         <mat-label>Все продукты</mat-label>
         <mat-select
           disableOptionCentering
@@ -15,7 +18,9 @@
         >
           <mat-option *ngFor="let product of products" [value]="product.value">
             <img
-              [src]="'assets/images/icons/filters/products/' + product.icon + '.svg'"
+              [src]="
+                'assets/images/icons/filters/products/' + product.icon + '.svg'
+              "
               [alt]="product.icon"
               class="dropdown-icon"
             />
@@ -25,9 +30,12 @@
       </mat-form-field>
     </div>
 
-    <!-- Категории -->
     <div class="sidebar-group-btn__filter category">
-      <mat-form-field appearance="outline" class="custom-select" floatLabel="auto">
+      <mat-form-field
+        appearance="outline"
+        class="custom-select"
+        floatLabel="auto"
+      >
         <mat-label>Все задачи</mat-label>
         <mat-select
           disableOptionCentering
@@ -37,7 +45,9 @@
         >
           <mat-option *ngFor="let task of tasks" [value]="task.value">
             <img
-              [src]="'assets/images/icons/filters/category/' + task.icon + '.svg'"
+              [src]="
+                'assets/images/icons/filters/category/' + task.icon + '.svg'
+              "
               [alt]="task.icon"
               class="dropdown-icon"
             />
